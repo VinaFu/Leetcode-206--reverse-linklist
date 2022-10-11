@@ -27,3 +27,27 @@
              NULL     1，  2，  3，  4
              prev   cur
                     prev  cur
+
+
+解法二 - recursion 
+那最后一项当作单独循环项
+
+        class Solution:
+            def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+                if not head:
+                    return None
+                        // 空集返回none
+
+                newHead = head
+                if head.next:
+                    newHead = self.reverseList(head.next) //等于新输入的值
+                    head.next.next = head
+                head.next = None
+
+                return newHead
+
+                 #   思路    head  newHead      
+                 #   1，  2，  3，  4     null （以3-4为sub-task）
+                 #                       head.next  4- null 
+                 #             head.next.next 回头到4
+                 #             head.next= none 断掉4-null

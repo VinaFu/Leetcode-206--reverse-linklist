@@ -13,15 +13,15 @@
                   while cur:
                       // 如果cur存在，进行下面的loop。
                       nxt = cur.next
-                        //占位下一个可能的点
+                        //占位下一个可能的点,找好退路位置
                       cur.next = prev
-                        //接头 = 插向前一个位置
+                        //接头 
                       prev = cur
-                        // prev现在等于cur，见下图。
+                        // prev现在等于cur，见下图。鸠占鹊巢
                       cur = nxt
-                        // 站位挪后一个
+                        // 站位挪后一个，鹊往后移动
                   return prev
-                        // 返回输入的东西
+                        // 返回输入的东西，看看鸠
                   
              Head      
              NULL     1，  2，  3，  4

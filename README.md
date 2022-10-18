@@ -5,28 +5,25 @@
 
 解法一：
   
-       class Solution:
-              def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-                  prev = None
-                  cur = head
-                      // 最开始的头是没有，第一个为cur
-                  while cur:
-                      // 如果cur存在，进行下面的loop。
-                      nxt = cur.next
-                        //占位下一个可能的点,找好退路位置
-                      cur.next = prev
-                        //接头 
-                      prev = cur
-                        // prev现在等于cur，见下图。鸠占鹊巢
-                      cur = nxt
-                        // 站位挪后一个，鹊往后移动
-                  return prev
-                        // 返回输入的东西，看看鸠
+                # Definition for singly-linked list.
+                # class ListNode:
+                #     def __init__(self, val=0, next=None):
+                #         self.val = val
+                #         self.next = next
+                class Solution:
+                    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+                        prev = None               //serve as a pointer,start as a none
+                        while head != None:
+                            cur = head            // head is a value here;cur is the position to add new node, cur's place never change
+                            head = head.next      // move val to next place
+                            cur.next = prev       // link the next place
+                            prev = cur            // put prev to cur place
+                        return prev
                   
-             Head      
-             NULL     1，  2，  3，  4
-             prev   cur
-                    prev  cur
+                    cur
+                     1，  2，  3，  4
+             prev   head
+                    prev  head
 
 
 解法二 - recursion 

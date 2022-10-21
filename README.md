@@ -25,6 +25,9 @@
              prev   head
                     prev  head
 
+
+              Hankranker- reverse a linked list(Week 3)
+              
                     def reverse(llist):              // input is llist
                         # Write your code here  
                         prev = None                  // empty 

@@ -15,7 +15,7 @@
                         prev = None               //serve as a pointer,start as a none
                         while head != None:
                             cur = head            // head is a value here;cur is the position to add new node, cur's place never change
-                            head = head.next      // move val to next place
+                            head = head.next      // occupy the next place
                             cur.next = prev       // link the next place
                             prev = cur            // put prev to cur place
                         return prev
@@ -24,6 +24,18 @@
                      1，  2，  3，  4
              prev   head
                     prev  head
+
+                    def reverse(llist):              // input is llist
+                        # Write your code here  
+                        prev = None                  // empty 
+                        cur=llist                    // equal to input
+                        while cur:
+                            next = cur.next         // occupy the next position
+                            cur.next = prev         // insert a prev
+                            prev= cur               // move the cur as the first place
+                            cur = next              // link to the next position/ insert complished
+                        return prev
+
 
 
 解法二 - recursion 
